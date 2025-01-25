@@ -1,15 +1,131 @@
 .contact-section {
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .section-text {
-    font-size: 1rem;
-    color: #555;
-  }
-  
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  color: white;
+  gap: 8px;
+}
+
+.tab {
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab.active {
+  background-color: teal;
+}
+
+.tab-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.tab-content {
+  margin-top: 20px;
+  color: white;
+}
+
+.balance-content,
+.referrals-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.balance-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.balance-row-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.balance-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.withdraw-button {
+  background-color: #000080;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.withdraw-button:hover {
+  background-color: #0056b3;
+}
+
+.copy-link {
+  text-align: center;
+  margin: 20px 0;
+  color: white;
+}
+
+.link-text {
+  color: teal;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.link-text:hover {
+  color: #0056b3;
+}
+
+.sub-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sub-tab {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+.sub-tab button {
+  width: 100%;
+}
+
+.sub-tab.active {
+  background-color: #000080;
+  color: white;
+}
+
+.sub-tab-content {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  color: black;
+}

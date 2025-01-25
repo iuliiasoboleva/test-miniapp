@@ -1,0 +1,53 @@
+.settings-section {
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  .notification-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+  
+  .notification-row span {
+    font-size: 1rem;
+  }
+  
+  .notification-toggle {
+    display: flex;
+    align-items: center;
+  }
+  
+  .toggle-button {
+    width: 50px;
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+    background-color: #ddd;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .toggle-button.active {
+    background-color: #007bff;
+  }
+  
+  .toggle-button.inactive {
+    background-color: #ddd;
+    color: #000;
+  }
+  
+  .toggle-button:hover {
+    opacity: 0.8;
+  }
+  

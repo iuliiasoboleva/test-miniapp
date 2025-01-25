@@ -12,9 +12,9 @@ const NavBar = ({ onNavClick }) => {
   const [tokens, setTokens] = useState(0.9);
   const [tariff, setTariff] = useState("Free");
   const [showSubMenu, setShowSubMenu] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
 
   useEffect(() => {
-    // Имитация API-запроса для получения данных пользователя
     const fetchUserData = async () => {
       const response = await new Promise((resolve) =>
         setTimeout(() => resolve({ tokens: 0.9, tariff: "Free" }), 500)
@@ -25,9 +25,29 @@ const NavBar = ({ onNavClick }) => {
     fetchUserData();
   }, []);
 
+  const handleNavClick = (menu) => {
+    setActiveMenu(menu);
+    onNavClick(menu);
+  };
+
   const handleContactClick = () => {
     setShowSubMenu((prev) => !prev);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".submenu") && !event.target.closest(".menu-item")) {
+        setShowSubMenu(false);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
 
   return (
     <nav className="navbar">
@@ -40,15 +60,15 @@ const NavBar = ({ onNavClick }) => {
       </div>
       <div className="navbar-right">
         <ul className="navbar-menu">
-          <li className="menu-item" onClick={() => onNavClick("home")}>
+          <li className="menu-item" onClick={() => handleNavClick("home")}>
             <HomeIcon className="menu-icon" />
             <span className="menu-text">Home</span>
           </li>
-          <li className="menu-item" onClick={() => onNavClick("about")}>
+          <li className="menu-item" onClick={() => handleNavClick("about")}>
             <AboutIcon className="menu-icon" />
             <span className="menu-text">About</span>
           </li>
-          <li className="menu-item" onClick={() => onNavClick("features")}>
+          <li className="menu-item" onClick={() => handleNavClick("features")}>
             <FeaturesIcon className="menu-icon" />
             <span className="menu-text">Features</span>
           </li>
@@ -58,13 +78,19 @@ const NavBar = ({ onNavClick }) => {
           </li>
           {showSubMenu && (
             <ul className="submenu">
-              <li className="submenu-item" onClick={() => onNavClick("message")}>
+              <li
+                className={`submenu-item ${activeMenu === "settings" ? "active" : ""}`}
+                onClick={() => handleNavClick("settings")}
+              >
                 <SubMenuIcon1 className="submenu-icon" />
-                <span className="submenu-text">Message Us</span>
+                <span className="submenu-text">Настройки</span>
               </li>
-              <li className="submenu-item" onClick={() => onNavClick("call")}>
+              <li
+                className={`submenu-item ${activeMenu === "funds" ? "active" : ""}`}
+                onClick={() => handleNavClick("funds")}
+              >
                 <SubMenuIcon2 className="submenu-icon" />
-                <span className="submenu-text">Call Us</span>
+                <span className="submenu-text">Движение средств</span>
               </li>
             </ul>
           )}
