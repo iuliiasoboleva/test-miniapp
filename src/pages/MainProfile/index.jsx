@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import NavBar from "../../components/NavBar";
 import HomeSection from "../../components/HomeSection";
-import AboutSection from "../../components/AboutSection";
+import SubscriptionSection from "../../components/SubscriptionSection";
 import FeaturesSection from "../../components/FeaturesSection";
-import ContactSection from "../../components/ContactSection";
+import PartnerSection from "../../components/PartnerSection";
 import SettingsSection from "../../components/SettingsSection";
 import FundsMovementSection from "../../components/FundsMovementSection";
 import Footer from "../../components/Footer";
@@ -25,9 +25,9 @@ const MainProfile = () => {
       <NavBar onNavClick={handleNavClick} />
       <main>
         {activeSection === "home" && <HomeSection />}
-        {activeSection === "about" && <AboutSection />}
+        {activeSection === "subscription" && <SubscriptionSection />}
         {activeSection === "features" && <FeaturesSection onNavigate={handleNavigate} />}
-        {activeSection === "contact" && <ContactSection />}
+        {activeSection === "partner" && <PartnerSection />}
         {activeSection === "settings" && <SettingsSection />}
         {activeSection === "funds" && <FundsMovementSection />}
       </main>

@@ -62,32 +62,38 @@ const NavBar = ({ onNavClick }) => {
         <ul className="navbar-menu">
           <li className="menu-item" onClick={() => handleNavClick("home")}>
             <HomeIcon className="menu-icon" />
-            <span className="menu-text">Home</span>
+            <span className="menu-text">Профиль</span>
           </li>
-          <li className="menu-item" onClick={() => handleNavClick("about")}>
+          <li className="menu-item" onClick={() => handleNavClick("subscription")}>
             <AboutIcon className="menu-icon" />
-            <span className="menu-text">About</span>
+            <span className="menu-text">Подписка</span>
           </li>
           <li className="menu-item" onClick={() => handleNavClick("features")}>
             <FeaturesIcon className="menu-icon" />
-            <span className="menu-text">Features</span>
+            <span className="menu-text">Токены</span>
           </li>
           <li className="menu-item" onClick={handleContactClick}>
             <ContactIcon className="menu-icon" />
-            <span className="menu-text">Contact</span>
+            <span className="menu-text">Еще</span>
           </li>
           {showSubMenu && (
             <ul className="submenu">
               <li
                 className={`submenu-item ${activeMenu === "settings" ? "active" : ""}`}
-                onClick={() => handleNavClick("settings")}
+                onClick={() => {
+                  handleNavClick("settings");
+                  setShowSubMenu(false); // Закрываем субменю
+                }}
               >
                 <SubMenuIcon1 className="submenu-icon" />
                 <span className="submenu-text">Настройки</span>
               </li>
               <li
                 className={`submenu-item ${activeMenu === "funds" ? "active" : ""}`}
-                onClick={() => handleNavClick("funds")}
+                onClick={() => {
+                  handleNavClick("funds");
+                  setShowSubMenu(false); // Закрываем субменю
+                }}
               >
                 <SubMenuIcon2 className="submenu-icon" />
                 <span className="submenu-text">Движение средств</span>

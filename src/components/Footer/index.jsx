@@ -11,7 +11,7 @@ const Footer = ({ onNavClick }) => {
                 <HomeIcon className="footer-menu-icon" />
                 <span className="footer-menu-text">Аккаунт</span>
             </div>
-            <div className="footer-menu-item" onClick={() => onNavClick("contact")}>
+            <div className="footer-menu-item" onClick={() => onNavClick("partner")}>
                 <AboutIcon className="footer-menu-icon" />
                 <span className="footer-menu-text">Партнерство</span>
             </div>

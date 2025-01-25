@@ -3,7 +3,7 @@ import { ReactComponent as InfoIcon } from "../../assets/images/exclamation.svg"
 import plans from "../../data/plans";
 import "./styles.css";
 
-const AboutSection = () => {
+const SubscriptionSection = () => {
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [showPlanDetails, setShowPlanDetails] = useState(false);
   const [showPurchasePopup, setShowPurchasePopup] = useState(false);
@@ -168,4 +168,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default SubscriptionSection;

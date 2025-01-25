@@ -4,7 +4,7 @@ import { ReactComponent as ReferralsIcon } from "../../assets/images/users-alt.s
 import { ReactComponent as DocumentationIcon } from "../../assets/images/comment-alt.svg";
 import "./styles.css";
 
-const ContactSection = () => {
+const PartnerSection = () => {
   const [activeTab, setActiveTab] = useState("balance");
   const [activeSubTab, setActiveSubTab] = useState("payments");
 
@@ -130,4 +130,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default PartnerSection;

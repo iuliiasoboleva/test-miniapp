@@ -39,7 +39,7 @@ const FeaturesSection = ({ onNavigate }) => {
         <InfoIcon className="notice-icon" />
         <p>Токены можно купить только с активной подпиской.</p>
       </div>
-      <button className="subscribe-button" onClick={() => onNavigate("about")}>
+      <button className="subscribe-button" onClick={() => onNavigate("subscription")}>
         Купить подписку
       </button>
     </section>
