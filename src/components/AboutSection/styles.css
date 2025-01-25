@@ -1,15 +1,188 @@
 .about-section {
-    padding: 2rem;
-    background-color: #f9f9f9;
-  }
-  
-  .section-title {
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .section-text {
-    font-size: 1rem;
-    color: #555;
-  }
-  
+  padding: 20px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  height: 450px;
+}
+
+.plan-slider {
+  flex: 0 0 300px;
+  background-color: #444;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+}
+
+.plan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.info-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%;
+  right: 10px;
+  width: 200px;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.plan-description {
+  list-style: none;
+  padding: 0;
+}
+
+.plan-feature {
+  margin-bottom: 5px;
+  color: white;
+}
+
+.plan-details-link {
+  color: #000080;
+  cursor: pointer;
+}
+
+.plan-pricing {
+  color: white;
+}
+
+.plan-discount {
+  color: teal;
+}
+
+.purchase-button {
+  background-color: #000080;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.purchase-button:hover {
+  background-color: #0056b3;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.popup-content {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #000080;
+  color: white;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.pay-buttons {
+  flex-direction: column;
+  display: flex;
+}
+
+.close-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.pay-button {
+  background-color: teal;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.token-tabs {
+  display: flex;
+  position: relative;
+  gap: 0;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.token-tab {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.token-tab.active {
+  color: white;
+  background-color: #000080;
+}
+
+.tab-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  border-radius: 4px;
+  background-color: #000080;
+  transition: transform 0.3s;
+  z-index: 0;
+}
