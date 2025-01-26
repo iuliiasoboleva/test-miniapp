@@ -1,0 +1,16 @@
+{
+    "navbar": {
+      "profile": "Profile",
+      "subscription": "Subscription",
+      "tokens": "Tokens",
+      "more": "More",
+      "settings": "Settings",
+      "funds": "Funds Movement"
+    },
+    "settings": {
+      "notifications": "Receive updates notifications",
+      "tokenUsage": "Notify about token deductions",
+      "referralPayments": "Referral payments"
+    }
+  }
+  

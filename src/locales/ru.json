@@ -1,0 +1,16 @@
+{
+    "navbar": {
+      "profile": "Профиль",
+      "subscription": "Подписка",
+      "tokens": "Токены",
+      "more": "Еще",
+      "settings": "Настройки",
+      "funds": "Движение средств"
+    },
+    "settings": {
+      "notifications": "Получать уведомления об обновлениях",
+      "tokenUsage": "Уведомлять о списании токенов",
+      "referralPayments": "Оплаты рефералами"
+    }
+  }
+  

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import "./styles.css";
 
 const SettingsSection = () => {
+  const { t } = useTranslation();
+
   const [notifications, setNotifications] = useState({
     updates: false,
     tokenDeduction: false,
@@ -16,7 +20,7 @@ const SettingsSection = () => {
     <section id="setting" className="settings-section">
       <h2 className="section-title">Настройки уведомлений</h2>
       <div className="notification-row">
-        <span>Получать уведомления об обновлениях</span>
+        <span>{t("settings.tokenUsage")}</span>
         <div className="notification-toggle">
           <button
             className={`toggle-button ${
@@ -29,7 +33,7 @@ const SettingsSection = () => {
         </div>
       </div>
       <div className="notification-row">
-        <span>Уведомлять о списании токенов</span>
+        <span>{t("settings.notifications")}</span>
         <div className="notification-toggle">
           <button
             className={`toggle-button ${
@@ -42,7 +46,7 @@ const SettingsSection = () => {
         </div>
       </div>
       <div className="notification-row">
-        <span>Оплаты рефералами</span>
+        <span>{t("settings.referralPayments")}</span>
         <div className="notification-toggle">
           <button
             className={`toggle-button ${
