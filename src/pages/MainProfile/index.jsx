@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import NavBar from "../../components/NavBar";
 import HomeSection from "../../components/HomeSection";
 import SubscriptionSection from "../../components/SubscriptionSection";
 import FeaturesSection from "../../components/FeaturesSection";
@@ -7,6 +6,7 @@ import PartnerSection from "../../components/PartnerSection";
 import SettingsSection from "../../components/SettingsSection";
 import FundsMovementSection from "../../components/FundsMovementSection";
 import Footer from "../../components/Footer";
+import Header from "../../components/Header";
 
 const MainProfile = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -22,7 +22,7 @@ const MainProfile = () => {
 
   return (
     <div>
-      <NavBar onNavClick={handleNavClick} />
+      <Header onNavClick={handleNavClick} />
       <main>
         {activeSection === "home" && <HomeSection />}
         {activeSection === "subscription" && <SubscriptionSection />}

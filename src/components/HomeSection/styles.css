@@ -1,73 +1,132 @@
-.home-section {
+/* Общий контейнер */
+.mainBlock {
   display: flex;
-  align-items: stretch;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
-  width: 100%;
+  gap: 20px;
+  height: 100%;
 }
 
-.home-left {
+/* Левая часть с изображением */
+.leftSide {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  background-color: #444;
-  border-radius: 8px;
-  padding: 1rem;
-  text-align: center;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  width: 50%;
+  align-items: center;
 }
 
 .home-image {
   max-width: 100%;
   height: auto;
-  margin-bottom: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.home-text {
-  font-size: 14px;
-  font-weight: bold;
-  color: white;
-  text-align: left;
-  margin-bottom: 8px;
-}
-
-.home-right {
+/* Правая часть с текстом */
+.rightSide {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 50%;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-.social-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Секция кнопок */
+.buttonSection {
+  background: #1c1c1c;
+  margin-top: -25px;
+  padding-top: 40px;
+  padding-bottom: 35px;
 }
 
-.social-item {
+.buttonSection .button {
+  font-size: 15px;
+  margin: 20px 0;
+  text-align: left;
+  font-weight: 200;
+  position: relative;
+  color: white;
+  line-height: 21px;
+  padding-left: 15px;
+}
+
+.buttonSection .button a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.button-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: black;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Нижняя часть */
+.bottomButton {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.videoBtnText a {
+  display: flex;
   justify-content: space-between;
-  font-size: 1rem;
-  color: white;
+  align-items: center;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
 }
 
-.social-icon {
-  width: 24px;
-  height: 24px;
-  fill: #555;
-  transition: fill 0.3s;
+.videoBtnText .button-icon {
+  font-size: 20px;
+  margin-left: 10px;
+  color: #e63946;
 }
 
-.social-item:hover .social-icon {
-  fill: #000;
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+  .mainBlock {
+      flex-direction: row;
+      align-items: center;
+  }
+
+  .leftSide, .rightSide {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+  }
+
+  .home-image {
+      max-width: 80%;
+  }
+
+  .titleButton {
+      justify-content: center;
+  }
+
+  .buttonSection {
+      align-items: center;
+  }
+
+  .button a {
+      flex-direction: column;
+      text-align: center;
+  }
 }

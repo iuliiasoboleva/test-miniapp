@@ -1,26 +1,33 @@
 import React from "react";
-import { ReactComponent as HomeIcon } from "../../assets/images/user.svg";
-import { ReactComponent as AboutIcon } from "../../assets/images/play-alt.svg";
-import { ReactComponent as ContactIcon } from "../../assets/images/users-alt.svg";
 import "./styles.css";
 
 const Footer = ({ onNavClick }) => {
-    return (
-        <footer className="footer">
-            <div className="footer-menu-item" onClick={() => onNavClick("home")}>
-                <HomeIcon className="footer-menu-icon" />
-                <span className="footer-menu-text">Аккаунт</span>
-            </div>
-            <div className="footer-menu-item" onClick={() => onNavClick("partner")}>
-                <AboutIcon className="footer-menu-icon" />
-                <span className="footer-menu-text">Партнерство</span>
-            </div>
-            <div className="footer-menu-item" onClick={() => onNavClick("features")}>
-                <ContactIcon className="footer-menu-icon" />
-                <span className="footer-menu-text">Сообщество</span>
-            </div>
-        </footer>
-    );
+  return (
+    <footer className="footer">
+      <nav className="footer-menu">
+        <ul>
+          <li onClick={() => onNavClick("home")}>
+            <a href="#">
+              <i className="fas fa-user"></i>
+              Аккаунт
+            </a>
+          </li>
+          <li onClick={() => onNavClick("partner")}>
+            <a href="#">
+              <i className="fas fa-handshake"></i>
+              <span className="footer-menu-text">Партнерство</span>
+            </a>
+          </li>
+          <li onClick={() => onNavClick("features")}>
+            <a href="#">
+              <i className="fas fa-users"></i>
+              <span className="footer-menu-text">Сообщество</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  );
 };
 
 export default Footer;

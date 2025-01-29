@@ -1,33 +1,36 @@
 .footer {
-  background-color: #333;
-  color: white;
-  padding: 1rem;
+  padding: 5px 0;
+  z-index: 9001;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1c1c1c;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
-.footer-menu-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.footer-menu li {
   text-align: center;
-  color: white;
 }
 
-.footer-menu-icon {
-  width: 24px;
-  height: 24px;
-  margin-bottom: 5px;
-  fill: white;
-  transition: fill 0.3s;
+.footer-menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 11px;
+  color: #fff;
 }
 
-.footer-menu-text {
-  font-size: 0.9rem;
-}
-
-.footer-menu-item:hover .menu-icon {
-  fill: #aaa;
+.footer-menu i {
+  font-size: 1.7em;
+  display: block;
+  line-height: 20px;
+  margin-bottom: 8px;
 }
