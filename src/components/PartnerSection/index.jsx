@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { ReactComponent as BalanceIcon } from "../../assets/images/dollar.svg";
-import { ReactComponent as ReferralsIcon } from "../../assets/images/users-alt.svg";
-import { ReactComponent as DocumentationIcon } from "../../assets/images/comment-alt.svg";
+import Notice from '../Notice';
 import "./styles.css";
 
 const PartnerSection = () => {
@@ -18,36 +16,45 @@ const PartnerSection = () => {
       case "balance":
         return (
           <div className="balance-content">
-            <div className="balance-row">
-              <div className="balance-row-text">
-                <BalanceIcon className="balance-icon" />
-                <span>Токены:</span>
+            <div className="partner-balance">
+              <div className="stat-item">
+                <div>
+                  <p>
+                    <span className="stat-icon"><i class="bi bi-piggy-bank-fill"></i></span>
+                    <span className="stat-text">Баланс партнера</span>
+                  </p>
+                  <span className="stat-number">0.000 ⚡</span>
+                </div>
               </div>
-              <span>1000</span>
-            </div>
-            <div className="balance-row">
-              <div className="balance-row-text">
-                <BalanceIcon className="balance-icon" />
-                <span>Рубли:</span>
+              <div className="stat-item">
+                <div>
+                  <p>
+                    <span className="stat-icon"><i class="bi bi-graph-up-arrow"></i></span>
+                    <span className="stat-text">Всего продаж</span>
+                  </p>
+                  <span className="stat-number">0 🛒</span>
+                </div>
               </div>
-              <span>5000</span>
-            </div>
-            <div className="balance-row">
-              <div className="balance-row-text">
-                <BalanceIcon className="balance-icon" />
-                <span>Доллары:</span>
+              <div className="stat-item">
+                <div>
+                  <p>
+                    <span className="stat-icon"><i class="bi bi-currency-exchange"></i></span>
+                    <span className="stat-text">Сумма продаж</span>
+                  </p>
+                  <span className="stat-number">0.00 ₽ / 0.00 €</span>
+                </div>
               </div>
-              <span>70</span>
+              <button href="#" className="cardButton">Вывести в <span>₽ € $</span></button>
             </div>
-            <button className="withdraw-button">Вывести</button>
-            <div className="copy-link">
-              <p>Кликните на ссылку, чтобы её скопировать:</p>
+            <Notice text={' Отправляйте друзьям/коллегам свою уникальную ссылку, чтобы зарабатывать вместе с SYNTX 👇'} />
+            <div className="partner-copy-link">
               <p
                 className="link-text"
                 onClick={() => navigator.clipboard.writeText("https://referral-link.com")}
               >
-                https://referral-link.com
+                <i className="bi bi-link-45deg"></i>https://referral-link.com
               </p>
+              <p><i className="bi bi-copy"></i>Кликните на ссылку, чтобы её скопировать</p>
             </div>
             <div className="sub-tabs">
               <button
@@ -100,31 +107,36 @@ const PartnerSection = () => {
   };
 
   return (
-    <section id="contact" className="contact-section">
-      <h2 className="section-title">Партнерство</h2>
-      <div className="tabs">
-        <div
-          className={`tab ${activeTab === "balance" ? "active" : ""}`}
-          onClick={() => handleTabClick("balance")}
-        >
-          <BalanceIcon className="tab-icon" />
-          <span>Баланс</span>
-        </div>
-        <div
-          className={`tab ${activeTab === "referrals" ? "active" : ""}`}
-          onClick={() => handleTabClick("referrals")}
-        >
-          <ReferralsIcon className="tab-icon" />
-          <span>Мои рефералы</span>
-        </div>
-        <div
-          className={`tab ${activeTab === "documentation" ? "active" : ""}`}
-          onClick={() => handleTabClick("documentation")}
-        >
-          <DocumentationIcon className="tab-icon" />
-          <span>Документация</span>
-        </div>
-      </div>
+    <section id="partner" className="partner-section">
+      <div className="partner-title">PARTNER</div>
+      <nav className="partner-top-nav">
+        <ul>
+          <li>
+            <a
+              className={activeTab === "balance" ? "active" : ""}
+              onClick={() => handleTabClick("balance")}
+            >
+              <i className="bi bi-piggy-bank-fill"></i> Баланс
+            </a>
+          </li>
+          <li>
+            <a
+              className={activeTab === "referrals" ? "active" : ""}
+              onClick={() => handleTabClick("referrals")}
+            >
+              <i className="bi bi-people-fill"></i> Мои рефералы
+            </a>
+          </li>
+          <li>
+            <a
+              className={activeTab === "documentation" ? "active" : ""}
+              onClick={() => handleTabClick("documentation")}
+            >
+              <i className="bi bi-file-earmark-text-fill"></i> Документация
+            </a>
+          </li>
+        </ul>
+      </nav>
       <div className="tab-content">{renderContent()}</div>
     </section>
   );

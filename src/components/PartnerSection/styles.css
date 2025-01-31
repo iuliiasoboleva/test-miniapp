@@ -1,48 +1,51 @@
-.contact-section {
+.partner-section {
   padding: 20px;
 }
 
-.section-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+.partner-title {
+  width: 100%;
   text-align: center;
+  font-weight: 800;
+  font-size: 15px;
 }
 
-.tabs {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-  color: white;
-  gap: 8px;
+.partner-nav {
+  margin: 0 10px;
 }
 
-.tab {
-  text-align: center;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  background-color: #444;
+.partner-top-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
 }
 
-.tab.active {
-  background-color: teal;
+.partner-top-nav li {
+  margin: 15px 5px;
+  text-align: center;
+  flex: 1;
 }
 
-.tab-icon {
-  width: 30px;
-  height: 30px;
-  margin-bottom: 5px;
+.partner-top-nav a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background: #201F22;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
 }
 
-.tab-content {
-  margin-top: 20px;
-  color: white;
+.partner-top-nav i.bi {
+  font-size: 2.2em;
+  display: block;
+  color: #fff;
+  margin-bottom: 2px;
 }
 
 .balance-content,
@@ -52,41 +55,60 @@
   gap: 10px;
 }
 
-.balance-row {
+.partner-balance {
+  background-color: #393939;
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.stat-item div {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  color: white;
+  width: 100%;
+  gap: 10px;
 }
 
-.balance-row-text {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.balance-icon {
-  width: 20px;
-  height: 20px;
-}
-
-.withdraw-button {
-  background-color: #000080;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.withdraw-button:hover {
-  background-color: #0056b3;
-}
-
-.copy-link {
+.stat-icon {
+  font-size: 17px;
+  min-width: 22px;
   text-align: center;
+  padding: 10px 0;
+  margin-right: 10px;
+}
+
+.stat-text {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.stat-number {
+  text-align: right;
+  padding: 10px 0;
+}
+
+.cardButton {
+  border: 0;
+  color: #1c1c1c;
+  background: #66EBE3;
+  text-align: center;
+  border-radius: 20px;
+  padding: 15px 0;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Unbounded", sans-serif;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.partner-copy-link {
+  text-align: left;
   margin: 20px 0;
   color: white;
+}
+
+.partner-copy-link i {
+  margin-right: 8px;
 }
 
 .link-text {

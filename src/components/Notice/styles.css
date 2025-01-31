@@ -1,0 +1,19 @@
+
+.notice {
+    border: 1px dashed #66EBE3;
+    padding: 10px 15px;
+    border-radius: 15px;
+    padding: 15px;
+    font-size: 12px;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+  
+  .notice i {
+    color: #66EBE3;
+  }
+  

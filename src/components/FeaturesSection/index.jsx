@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
+import Notice from "../Notice";
 
 const FeaturesSection = ({ onNavigate }) => {
   const [tokens, setTokens] = useState(0); // Начальное количество токенов
@@ -32,10 +33,7 @@ const FeaturesSection = ({ onNavigate }) => {
         <p>За 1 токен:</p>
         <p>{pricePerToken.rub} RUB / {pricePerToken.usd} USD / {pricePerToken.eur} EUR</p>
       </div>
-      <div className="notice">
-      <i class="bi bi-info-square-fill"></i>       
-       <p>Токены можно купить только с активной подпиской.</p>
-      </div>
+      <Notice text={'Токены можно купить только с активной подпиской.'} />
       <button className="subscribe-button" onClick={() => onNavigate("subscription")}>
         Купить подписку
       </button>
