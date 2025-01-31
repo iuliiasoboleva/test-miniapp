@@ -1,0 +1,100 @@
+.payment-popup {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #171319
+  }
+  
+  .payment-popup-content {
+    background-color: #fefefe;
+    margin: 25% auto;
+    padding: 10px;
+    border: 1px solid #888;
+    width: 88%;
+    max-width: 500px;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .payment-popup-content h3 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .close-button {
+    color: #C345FF;
+    text-align: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .select-wrapper {
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+  }
+
+  .select-wrapper label {
+    font-weight: 300;
+    font-size: 12px;
+    flex-basis: 40%;
+  }
+
+  .select-input {
+    flex-basis: 55%;
+    flex-grow: 1;
+  }
+
+.select-wrapper i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #727272;
+  font-size: 16px;
+  stroke-width: 2px;
+}
+
+.defRow {
+  display: flex;
+  width: 100%;
+  padding: 2px 0;
+  gap: 10px;
+}
+
+.defRow .leftCell {
+  flex: 0 0 45%;
+}
+
+.defRow .rightCell {
+  flex: 0 0 55%;
+  text-align: left;
+}
+
+.payment-button {
+  border: 0;
+  background: #66EBE3;
+  text-align: center;
+  border-radius: 20px;
+  padding: 15px 0;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Unbounded", sans-serif;
+  letter-spacing: 0.5px;
+  width: 100%;
+  color: #1c1c1c;
+}

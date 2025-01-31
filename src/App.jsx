@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainProfile from "./pages/MainProfile";
 import GPTProfile from "./pages/GPTProfile";
 import FluxSettings from "./pages/FluxSettings";
+import FluxTrain from "./pages/FluxTrain";
 import useTelegramTheme from "./hooks/useTelegramTheme";
 import { SettingsProvider } from "./context/SettingsContext";
 
@@ -19,6 +20,7 @@ const App = () => {
             <FluxSettings />
           </SettingsProvider>
         } />
+        <Route path="/flux-train" element={<FluxTrain />} />
       </Routes>
     </Router>
   );

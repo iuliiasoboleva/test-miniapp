@@ -1,0 +1,50 @@
+.image-upload-container {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+  }
+  
+  .image-upload-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2196F3;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .image-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .image-preview-container {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .image-preview {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .remove-image {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgba(255, 0, 0, 0.7);
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  

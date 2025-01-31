@@ -5,9 +5,8 @@
   width: 100%;
 }
 
-.section-title {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+.features-section-title {
+  text-transform: uppercase;
   text-align: center;
 }
 
@@ -21,7 +20,7 @@
 }
 
 .selected-tokens {
-  color: white;
+  color: #C345FF;
 }
 
 .info-icon {
@@ -30,60 +29,67 @@
   cursor: pointer;
 }
 
-.price-info {
+.price-info p{
+  font-weight: 200;
+  margin-top: 0;
+  font-size: 11px;
   text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  color: teal;
-  margin-top: 20px;
+  color: #E2E2E2;
 }
 
 .notice {
+  border: 1px dashed #66EBE3;
+  padding: 10px 15px;
+  border-radius: 15px;
+  padding: 15px;
+  font-size: 12px;
+  color: #fff;
+  margin-bottom: 10px;
+  margin-top: 20px;
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  border: 1px solid teal;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  font-size: 0.9rem;
-  color: white;
+  gap: 8px;
+  justify-content: center;
 }
 
-.notice-icon {
-  width: 20px;
-  height: 20px;
+.notice i {
+  color: #66EBE3;
 }
 
 .subscribe-button {
-  width: 100%;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: white;
-  background-color: #000080;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border: 0;
+  color: #1c1c1c;
+  background: #66EBE3;
   text-align: center;
+  border-radius: 20px;
+  padding: 15px 0;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: "Unbounded", sans-serif;
+  letter-spacing: 0.5px;
+  width: 100%;
 }
 
 .subscribe-button:hover {
-  background-color: #0056b3;
+  background-color: #fff;
 }
 
 input[type="range"] {
   background-color: transparent;
   width: 100%;
+  margin: 20px 0;
 }
 
-input.token-slider[type="range"]::-webkit-slider-runnable-track {
-  background: #000080;
+input.token-range[type="range"]::-webkit-slider-runnable-track {
+  background: #D57CFF;
   border-radius: 4px;
+  color: rgb(157, 150, 142);
 }
 
-input.token-slider[type="range"]::-webkit-slider-thumb {
+input.token-range[type="range"]::-webkit-slider-thumb {
   background: #ffffff;
-  border: 2px solid #000080;
+  border: 2px solid #D57CFF;
   border-radius: 50%;
   cursor: pointer;
+  width: 24px;
+  height: 24px;
 }

@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import photoImage from "../../assets/images/ai.jpg";
 import "./styles.css";
 
 const HomeSection = () => {
+    const [showYoutube, setShowYoutube] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowYoutube((prev) => !prev);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="mainBlock">
             <div className="leftSide">
                 <img src={photoImage} alt="Neuro Photoshoot" className="home-image" />
             </div>
             <div className="rightSide">
+                <div className="titleButton">
+                    Присоединяйтесь
+                    <button className="arrowButton"></button>
+                </div>
                 <div className="buttonSection">
                     <div className="button">
                         <a href="#">
@@ -37,22 +50,24 @@ const HomeSection = () => {
                         </a>
                     </div>
                 </div>
-                <div className="bottomButton">
-                    <div className="videoBtnText" id="youtubeBtn">
-                        <a href="#">
-                            МЫ В YOUTUBE
-                            <div className="button-icon">
-                                <i className="bi bi-youtube"></i>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="videoBtnText" id="vkBtn">
-                        <a href="#">
-                            МЫ ВКОНТАКТЕ
-                            <div className="button-icon">
-                                <i className="fab fa-vk"></i>
-                            </div>
-                        </a>
+                <div className="bottomButton flip-container">
+                    <div className={`flipper ${showYoutube ? '' : 'flipped'}`}>
+                        <div className="front videoBtnText" id="youtubeBtn">
+                            <a href="#">
+                                <p>МЫ В YOUTUBE</p>
+                                <div className="button-icon">
+                                    <i className="bi bi-youtube"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div className="back videoBtnText" id="vkBtn">
+                            <a href="#">
+                                <p>МЫ ВКОНТАКТЕ</p>
+                                <div className="button-icon">
+                                    <i className="fab fa-vk"></i>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

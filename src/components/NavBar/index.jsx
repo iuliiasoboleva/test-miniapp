@@ -41,13 +41,13 @@ const NavBar = ({ onNavClick }) => {
               {t("navbar.subscription")}
             </a>
           </li>
-          <li onClick={() => handleNavClick("subscription")}>
+          <li onClick={() => handleNavClick("features")}>
             <a href="#">
               <i className="bi bi-lightning-charge-fill"></i>
               {t("navbar.tokens")}
             </a>
           </li>
-          <li onClick={() => handleNavClick("features")}>
+          <li onClick={() => handleNavClick("")}>
             <a href="#">
               <i className="bi bi-question"></i>
               FAQ
