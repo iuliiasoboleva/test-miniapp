@@ -1,133 +1,93 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import FluxTrainHeader from "../../components/FluxTrainHeader";
+import UploadForm from "../../components/UploadForm";
+import SettingsItem from "../../components/SettingsItem";
+import Notice from "../../components/Notice";
 import "./styles.css";
 
-const Header = () => (
-  <header>
-    <nav>
-      <ul style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
-        <li>
-          <a href="https://fluxtrain.syntxai.net?user_id=255850941&hash=hash_value">
-            <i className="bi bi-node-plus-fill"></i> Обучить LoRa
-          </a>
-        </li>
-        <li>
-          <a href="https://fluxtrain.syntxai.net?page=myloras&user_id=255850941&hash=hash_value">
-            <i className="bi bi-list-ul"></i> Мои LoRa
-          </a>
-        </li>
-        <li>
-          <a href="https://fluxtrain.syntxai.net?page=archive&user_id=255850941&hash=hash_value">
-            <i className="bi bi-archive-fill"></i> Архив LoRa
-          </a>
-        </li>
-        <li>
-          <a href="https://docs.syntx.ai">
-            <i className="bi bi-question"></i> База знаний
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-);
+const FluxTrain = () => {
+  const [checked, setChecked] = useState(false);
+  const [uploadedImages, setUploadedImages] = useState([]); // Хранение загруженных изображений
 
-const StepsSection = ({ steps, setSteps }) => (
-  <section className="box margin black">
-    <label>Шаги (Steps)</label>
-    <input
-      type="number"
-      value={steps}
-      min="500"
-      max="4000"
-      step="1"
-      onChange={(e) => setSteps(Number(e.target.value))}
-    />
-  </section>
-);
+  const handleImagesUpload = (images) => {
+    setUploadedImages(images);
+  };
 
-const PriceSection = ({ steps }) => {
-  const price = (steps * 0.12).toFixed(2);
-  return (
-    <section className="box margin black">
-      <label>Стоимость обучения:</label>
-      <span>⚡ {price}</span>
-    </section>
-  );
-};
-
-const ImageUploader = ({ images, setImages }) => {
-  const fileInputRef = useRef(null);
-
-  const handleFiles = async (files) => {
-    const newFiles = Array.from(files).slice(0, 50 - images.length);
-    for (const file of newFiles) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setImages((prev) => [...prev, { src: reader.result, file }]);
-      };
-      reader.readAsDataURL(file);
-    }
+  const handleRemoveImage = (index) => {
+    const updatedImages = uploadedImages.filter((_, i) => i !== index);
+    setUploadedImages(updatedImages);
   };
 
   return (
-    <section className="box margin black">
-      <div className="image-upload-container">
-        <i className="bi bi-cloud-upload" style={{ fontSize: "2em" }}></i>
-        <p>Перетащите изображения или</p>
-        <input
-          type="file"
-          ref={fileInputRef}
-          multiple
-          accept=".jpg,.jpeg,.png,.webp"
-          hidden
-          onChange={(e) => handleFiles(e.target.files)}
+    <div className="flux-train-container">
+      <FluxTrainHeader />
+      <h2>Создать <span>Lora @ Flux</span></h2>
+      <Notice text={'Загружайте до 5 изображений и создавайте свои собственные лоры. Подходит для создания собственной нейрофотосессии или уникальных стилей.'} />
+
+      <div className="model-title">
+        <SettingsItem label="Название" name="customText" type="textInput" />
+      </div>
+
+      <div className="model-title">
+        <SettingsItem
+          label="Назначение"
+          name="model"
+          type="select"
+          options={[
+            { value: "fluxopt", label: "Для персонажа" },
+            { value: "fluxpro", label: "Для стиля" },
+            { value: "fluxpro11", label: "Для объекта" }
+          ]}
         />
-        <button onClick={() => fileInputRef.current.click()} className="image-upload-button">
-          <i className="bi bi-image"></i> Выбрать файлы
-        </button>
       </div>
-      <div className="image-preview-grid">
-        {images.map((img, idx) => (
-          <div key={idx} className="image-preview-container">
-            <img src={img.src} className="image-preview" alt="Preview" />
-            <button
-              className="remove-image"
-              onClick={() => setImages(images.filter((_, i) => i !== idx))}
-            >
-              <i className="bi bi-x"></i>
-            </button>
+
+      <div className="model-title">
+        <label className="flux-train-checkbox-label">
+          <input type="checkbox" checked={checked} onChange={() => setChecked(!checked)} />
+          Установить шаги обучения самостоятельно (только для профессионалов)
+        </label>
+        {checked && (
+          <SettingsItem
+            label="Шаги"
+            name="steps"
+            type="number"
+            min="0"
+            max="4000"
+            step="1"
+            showRange={true}
+          />
+        )}
+      </div>
+
+      <div className="model-title text-train">
+        <p className="subtext-train">Стоимость обучения <span>*1 шаг = ⚡ 0.12</span></p>
+        <p>⚡ 60.00</p>
+      </div>
+
+      {/* Форма загрузки изображений */}
+      <UploadForm onImagesUpload={handleImagesUpload} />
+
+      {/* Превью загруженных файлов */}
+      {uploadedImages.length > 0 && (
+        <div className="image-preview-wrapper">
+          <h3>Загруженные изображения:</h3>
+          <div className="image-preview-grid">
+            {uploadedImages.map((image, index) => (
+              <div key={index} className="image-preview-container">
+                <img src={URL.createObjectURL(image)} alt="Preview" className="image-preview" />
+                <button className="remove-image" onClick={() => handleRemoveImage(index)}>
+                  ✕
+                </button>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+        </div>
+      )}
 
-const SubmitButton = ({ steps, images }) => {
-  const isDisabled = images.length < 5 || steps < 500;
-
-  return (
-    <button
-      className="submit-button"
-      disabled={isDisabled}
-      onClick={() => alert("Отправка формы...")}
-    >
-      Начать обучение ({images.length})
-    </button>
-  );
-};
-
-const FluxTrain = () => {
-  const [steps, setSteps] = useState(1000);
-  const [images, setImages] = useState([]);
-
-  return (
-    <div>
-      <Header />
-      <div className="settingsTitle">Создать <span>Lora @ Flux</span></div>
-      <ImageUploader images={images} setImages={setImages} />
-      <StepsSection steps={steps} setSteps={setSteps} />
-      <PriceSection steps={steps} />
-      <SubmitButton steps={steps} images={images} />
+      {/* Кнопка "Начать обучение" */}
+      {uploadedImages.length === 5 && (
+        <button className="submit-button">Начать обучение</button>
+      )}
     </div>
   );
 };

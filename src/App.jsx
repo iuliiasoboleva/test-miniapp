@@ -20,7 +20,11 @@ const App = () => {
             <FluxSettings />
           </SettingsProvider>
         } />
-        <Route path="/flux-train" element={<FluxTrain />} />
+        <Route path="/flux-train" element={
+          <SettingsProvider>
+            <FluxTrain />
+          </SettingsProvider>
+        } />
       </Routes>
     </Router>
   );

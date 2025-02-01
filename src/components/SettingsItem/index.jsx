@@ -7,7 +7,7 @@ const SettingsItem = ({ label, name, type = "text", options, min, max, step, sho
   const { settings, updateSetting } = useContext(SettingsContext);
 
   // Если в settings[name] ничего нет, берём первое значение из options
-  const initialValue = settings[name] ?? (options ? options[0].value : min || 0);
+  const initialValue = settings[name] ?? (options ? options[0].value : min || "");
   const [selectedValue, setSelectedValue] = useState(initialValue);
 
   useEffect(() => {
@@ -31,32 +31,43 @@ const SettingsItem = ({ label, name, type = "text", options, min, max, step, sho
   return (
     <div className="settings-item">
       <div className="settings-select-item">
-      <label>{label}</label>
+        <label>{label}</label>
 
-      {/* Селект */}
-      {options && (
-        <div className="select-wrapper">
-          <select value={selectedValue} onChange={(e) => handleChange(e.target.value)}>
-            {options.map((opt, index) => (
-              <option key={opt.value} value={opt.value}>{opt.label}</option>
-            ))}
-          </select>
-          <i className="bi bi-chevron-down select-arrow"></i>
-        </div>
-      )}
+        {/* Селект */}
+        {options && type !== "textInput" && (
+          <div className="select-wrapper">
+            <select value={selectedValue} onChange={(e) => handleChange(e.target.value)}>
+              {options.map((opt, index) => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+            <i className="bi bi-chevron-down select-arrow"></i>
+          </div>
+        )}
 
-      {/* Числовой ввод (счётчик) */}
-      {type === "number" && (
-        <input
-          type="number"
-          className='input-number'
-          min={min}
-          max={max}
-          step={step}
-          value={selectedValue}
-          onChange={(e) => handleChange(e.target.value)}
-        />
-      )}
+        {/* Числовой ввод (счётчик) */}
+        {type === "number" && (
+          <input
+            type="number"
+            className="input-number"
+            min={min}
+            max={max}
+            step={step}
+            value={selectedValue}
+            onChange={(e) => handleChange(e.target.value)}
+          />
+        )}
+
+        {/* Текстовый ввод с теми же стилями, что и select */}
+        {type === "textInput" && (
+            <input
+              type="text"
+              className="styled-input"
+              value={selectedValue}
+              onChange={(e) => handleChange(e.target.value)}
+              placeholder="Введите текст..."
+            />
+        )}
       </div>
 
       {/* Бегунок (если указан showRange) */}

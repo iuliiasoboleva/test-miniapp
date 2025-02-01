@@ -24,7 +24,8 @@ body {
 }
 
 select,
-.input-number {
+.input-number,
+.styled-input {
   appearance: none;
   background: #F3E5FF;
   border-radius: 45px;
@@ -39,4 +40,5 @@ select,
   font-size: 12px;
   cursor: pointer;
   padding-right: 40px;
+  max-width: 200px;
 }
