@@ -57,6 +57,7 @@
   position: absolute;
   right: 20px;
   z-index: 1000;
+  height: auto;
 }
 
 #dropdown-menu-item {
