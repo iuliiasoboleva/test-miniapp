@@ -24,12 +24,32 @@
   border-radius: 6px;
 }
 
+.preview-frame.horizontal {
+  width: 80%;
+  height: auto;
+}
+
+.preview-frame.vertical {
+  height: 80%;
+  width: auto;
+}
+
 .preview-frame-inverse {
   position: absolute;
-  width: 100%;
+  width: 80%;
   height: auto;
   max-width: 100%;
   max-height: 100%;
   border: 2px dashed #6b7280; /* Серый пунктирный фон */
   border-radius: 6px;
+}
+
+.preview-frame-inverse.horizontal {
+  width: 80%;
+  height: auto;
+}
+
+.preview-frame-inverse.vertical {
+  height: 80%;
+  width: auto;
 }

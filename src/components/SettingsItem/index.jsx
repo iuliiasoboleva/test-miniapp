@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SettingsContext } from "../../context/SettingsContext";
 import AspectRatioPreview from "../AspectRatioPreview"; // Визуализация прямоугольников
+import './styles.css';
 
 const SettingsItem = ({ label, name, type = "text", options, min, max, step, showRange, showPreview }) => {
   const { settings, updateSetting } = useContext(SettingsContext);
@@ -29,21 +30,26 @@ const SettingsItem = ({ label, name, type = "text", options, min, max, step, sho
 
   return (
     <div className="settings-item">
+      <div className="settings-select-item">
       <label>{label}</label>
 
       {/* Селект */}
       {options && (
-        <select value={selectedValue} onChange={(e) => handleChange(e.target.value)}>
-          {options.map((opt, index) => (
-            <option key={opt.value} value={opt.value}>{opt.label}</option>
-          ))}
-        </select>
+        <div className="select-wrapper">
+          <select value={selectedValue} onChange={(e) => handleChange(e.target.value)}>
+            {options.map((opt, index) => (
+              <option key={opt.value} value={opt.value}>{opt.label}</option>
+            ))}
+          </select>
+          <i className="bi bi-chevron-down select-arrow"></i>
+        </div>
       )}
 
       {/* Числовой ввод (счётчик) */}
       {type === "number" && (
         <input
           type="number"
+          className='input-number'
           min={min}
           max={max}
           step={step}
@@ -51,12 +57,14 @@ const SettingsItem = ({ label, name, type = "text", options, min, max, step, sho
           onChange={(e) => handleChange(e.target.value)}
         />
       )}
+      </div>
 
       {/* Бегунок (если указан showRange) */}
       {showRange && options ? (
         <input
           type="range"
           min="0"
+          className="token-range"
           max={options.length - 1}
           step="1"
           value={options.findIndex(opt => opt.value === selectedValue)}
@@ -65,6 +73,7 @@ const SettingsItem = ({ label, name, type = "text", options, min, max, step, sho
       ) : showRange && (
         <input
           type="range"
+          className="token-range"
           min={min}
           max={max}
           step={step}

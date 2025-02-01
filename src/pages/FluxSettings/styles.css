@@ -1,21 +1,30 @@
-/* Основной контейнер */
-.container {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background: #1e1e1e;
-    border-radius: 8px;
-    color: #fff;
-    font-family: 'Unbounded', sans-serif;
+.settings-title {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
+.settings-title span {
+    color: #C345FF;
+}
+
+.model-title,
+.settings-form {
+    background: #1c1c1c;
+    color: #E2E2E2;
+    margin: 10px 15px;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
 /* Чекбокс "Случайный Seed" */
 .checkbox-label {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    margin-top: 5px;
+    font-size: 10px;
+    justify-content: flex-end;
 }
 
 .checkbox-label input {
@@ -55,20 +64,27 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /* Стили для кнопок */
-.buttons {
+.settings-buttons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    gap: 8px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
-button {
-    padding: 10px 20px;
-    background: #C345FF;
-    color: white;
-    font-size: 14px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+.settings-buttons button {
+    color: #1c1c1c;
+    background: #66EBE3;
+    text-align: center;
+    border-radius: 20px;
+    padding: 15px 0;
+    font-weight: 400;
+    font-size: 18px;
+    font-family: "Unbounded", sans-serif;
+    letter-spacing: 0.5px;
+    width: 100%;
+    border: 0;
 }
 
 button:hover {

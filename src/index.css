@@ -23,10 +23,9 @@ body {
   padding-bottom: 100px;
 }
 
-select {
+select,
+.input-number {
   appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   background: #F3E5FF;
   border-radius: 45px;
   color: #727272;
@@ -38,7 +37,6 @@ select {
   letter-spacing: 0.5px;
   font-weight: 300;
   font-size: 12px;
-  width: 100%;
   cursor: pointer;
   padding-right: 40px;
 }

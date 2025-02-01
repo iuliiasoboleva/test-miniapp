@@ -1,4 +1,3 @@
-// src/components/AspectRatioPreview.js
 import React from "react";
 import "./styles.css";
 
@@ -21,10 +20,14 @@ const AspectRatioPreview = ({ selectedSize }) => {
     <div className="aspect-ratio-preview">
       <div className="preview-container">
         {/* Горизонтальный прямоугольник */}
-        <div className="preview-frame" style={{ aspectRatio: ratio }}></div>
+        <div className="preview-frame" style={{ width: ratio >= 1 ? "80%" : `${80 * ratio}%`, height: ratio >= 1 ? `${80 / ratio}%` : "80%" }}>
+          {selectedSize}
+        </div>
 
         {/* Вертикальный пунктирный прямоугольник */}
-        <div className="preview-frame-inverse" style={{ aspectRatio: 1 / ratio }}></div>
+        <div className="preview-frame-inverse" style={{ width: ratio >= 1 ? `${80 / ratio}%` : "80%", height: ratio >= 1 ? "80%" : `${80 * ratio}%` }}>
+          {selectedSize}
+        </div>
       </div>
     </div>
   );
