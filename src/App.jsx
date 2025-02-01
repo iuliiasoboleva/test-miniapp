@@ -4,6 +4,7 @@ import MainProfile from "./pages/MainProfile";
 import GPTProfile from "./pages/GPTProfile";
 import FluxSettings from "./pages/FluxSettings";
 import FluxTrain from "./pages/FluxTrain";
+import GPTDialogs from "./pages/GPTDialogs";
 import useTelegramTheme from "./hooks/useTelegramTheme";
 import { SettingsProvider } from "./context/SettingsContext";
 
@@ -25,6 +26,7 @@ const App = () => {
             <FluxTrain />
           </SettingsProvider>
         } />
+        <Route path="/gpt-dialogs" element={<GPTDialogs />} />
       </Routes>
     </Router>
   );
