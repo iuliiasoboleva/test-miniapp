@@ -1,0 +1,52 @@
+.tabs-component {
+    background: #fff;
+    color: #201F22;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.time-filters {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0.2px 0 0 var(--tg-theme-bg-color, #000);
+    position: relative;
+    font-size: 11px;
+}
+
+.time-filters a.active {
+    color: var(--tg-theme-link-color, #2678b6);
+}
+
+.time-filters a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 75%;
+    height: 3px;
+    background-color: var(--tg-theme-link-color, #2678b6);
+    transform: translateX(-50%);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+.time-filters a {
+    padding: 12px 2px;
+    border-radius: 4px;
+    text-align: center;
+    color: var(--tg-theme-hint-color, #ffffff);
+    font-size: 12px;
+    font-weight: 400;
+    position: relative;
+    cursor: pointer;
+}
+
+.statistics {
+    width: 100%;
+    margin: 0 auto;
+    color: #201F22;
+    display: block;
+    padding: 35px;
+    width: 100%;
+    text-align: center;
+}

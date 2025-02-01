@@ -22,40 +22,40 @@ const SettingsSection = () => {
       <div className="notification-row">
         <span>{t("settings.tokenUsage")}</span>
         <div className="notification-toggle">
-          <button
+          <div
             className={`toggle-button ${
               notifications.updates ? "active" : "inactive"
             }`}
             onClick={() => toggleNotification("updates")}
           >
             {notifications.updates ? "On" : "Off"}
-          </button>
+          </div>
         </div>
       </div>
       <div className="notification-row">
         <span>{t("settings.notifications")}</span>
         <div className="notification-toggle">
-          <button
+          <div
             className={`toggle-button ${
               notifications.tokenDeduction ? "active" : "inactive"
             }`}
             onClick={() => toggleNotification("tokenDeduction")}
           >
             {notifications.tokenDeduction ? "On" : "Off"}
-          </button>
+          </div>
         </div>
       </div>
       <div className="notification-row">
         <span>{t("settings.referralPayments")}</span>
         <div className="notification-toggle">
-          <button
+          <div
             className={`toggle-button ${
               notifications.referralPayments ? "active" : "inactive"
             }`}
             onClick={() => toggleNotification("referralPayments")}
           >
             {notifications.referralPayments ? "On" : "Off"}
-          </button>
+          </div>
         </div>
       </div>
     </section>

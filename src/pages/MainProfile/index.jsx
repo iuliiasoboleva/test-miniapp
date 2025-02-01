@@ -4,9 +4,11 @@ import SubscriptionSection from "../../components/SubscriptionSection";
 import FeaturesSection from "../../components/FeaturesSection";
 import PartnerSection from "../../components/PartnerSection";
 import SettingsSection from "../../components/SettingsSection";
-import FundsMovementSection from "../../components/FundsMovementSection";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
+import TabsComponent from "../../components/TabsComponent";
+import './styles.css'
+import FAQComponent from "../../components/FAQComponent";
 
 const MainProfile = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -20,6 +22,24 @@ const MainProfile = () => {
     setActiveSection(section);
   };
 
+  const tabData = {
+    "История платежей": 'Транзакции отсутствуют.',
+    "История токенов": 'Движение токенов не зафиксировано.'
+  };
+
+  const faqData = [
+    {
+      icon: "bi bi-lightbulb-fill ok",
+      question: "Рекомендуем посмотреть ознакомительное видео",
+      answer: "Ссылка на видео: https://youtu.be/BW9f0nUdpAo"
+    },
+    {
+      icon: "bi bi-question-square-fill red",
+      question: "Как работает партнерская программа?",
+      answer: "Партнер приглашает пользователей по уникальной ссылке и получает вознаграждение."
+    }
+  ];
+
   return (
     <div>
       <Header onNavClick={handleNavClick} />
@@ -29,7 +49,8 @@ const MainProfile = () => {
         {activeSection === "features" && <FeaturesSection onNavigate={handleNavigate} />}
         {activeSection === "partner" && <PartnerSection />}
         {activeSection === "settings" && <SettingsSection />}
-        {activeSection === "funds" && <FundsMovementSection />}
+        {activeSection === "funds" && <div className='funds-tabs'><TabsComponent tabs={tabData} /></div>}
+        {activeSection === "faq" && <div className='funds-tabs'><FAQComponent faqData={faqData} /></div>}
       </main>
       <Footer onNavClick={handleNavClick} />
     </div>

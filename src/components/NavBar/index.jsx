@@ -47,7 +47,7 @@ const NavBar = ({ onNavClick }) => {
               {t("navbar.tokens")}
             </a>
           </li>
-          <li onClick={() => handleNavClick("")}>
+          <li onClick={() => handleNavClick("faq")}>
             <a href="#">
               <i className="bi bi-question"></i>
               FAQ

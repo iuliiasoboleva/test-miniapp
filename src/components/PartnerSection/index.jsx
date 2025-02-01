@@ -1,15 +1,38 @@
 import React, { useState } from "react";
 import Notice from '../Notice';
+import TabsComponent from "../TabsComponent";
 import "./styles.css";
+import FAQComponent from "../FAQComponent";
 
 const PartnerSection = () => {
   const [activeTab, setActiveTab] = useState("balance");
-  const [activeSubTab, setActiveSubTab] = useState("payments");
 
   const handleTabClick = (tab) => {
     setActiveTab(tab);
-    setActiveSubTab(tab === "balance" ? "payments" : "full-list"); // Сбрасываем подтаб при смене таба
   };
+
+  const tabData = {
+    "Платежи рефералов": 'Транзакции отсутствуют.',
+    "Движение токенов": 'Движение токенов не зафиксировано.'
+  };
+
+  const tabReferralsData = {
+    "Полный список": 'Полный список рефералов',
+    "Самые активные": 'Самые активные рефералы'
+  };
+
+  const faqData = [
+    {
+      icon: "bi bi-lightbulb-fill ok",
+      question: "Рекомендуем посмотреть ознакомительное видео",
+      answer: "Ссылка на видео: https://youtu.be/BW9f0nUdpAo"
+    },
+    {
+      icon: "bi bi-question-square-fill red",
+      question: "Как работает партнерская программа?",
+      answer: "Партнер приглашает пользователей по уникальной ссылке и получает вознаграждение."
+    }
+  ];
 
   const renderContent = () => {
     switch (activeTab) {
@@ -56,51 +79,17 @@ const PartnerSection = () => {
               </p>
               <p><i className="bi bi-copy"></i>Кликните на ссылку, чтобы её скопировать</p>
             </div>
-            <div className="sub-tabs">
-              <button
-                className={`sub-tab ${activeSubTab === "payments" ? "active" : ""}`}
-                onClick={() => setActiveSubTab("payments")}
-              >
-                Платежи рефералов
-              </button>
-              <button
-                className={`sub-tab ${activeSubTab === "movements" ? "active" : ""}`}
-                onClick={() => setActiveSubTab("movements")}
-              >
-                Движение токенов
-              </button>
-            </div>
-            <div className="sub-tab-content">
-              {activeSubTab === "payments" && <p>Информация о платежах рефералов</p>}
-              {activeSubTab === "movements" && <p>Информация о движении токенов</p>}
-            </div>
+            <TabsComponent tabs={tabData} />
           </div>
         );
       case "referrals":
         return (
           <div className="referrals-content">
-            <div className="sub-tabs">
-              <button
-                className={`sub-tab ${activeSubTab === "full-list" ? "active" : ""}`}
-                onClick={() => setActiveSubTab("full-list")}
-              >
-                Полный список
-              </button>
-              <button
-                className={`sub-tab ${activeSubTab === "active" ? "active" : ""}`}
-                onClick={() => setActiveSubTab("active")}
-              >
-                Самые активные
-              </button>
-            </div>
-            <div className="sub-tab-content">
-              {activeSubTab === "full-list" && <p>Полный список рефералов</p>}
-              {activeSubTab === "active" && <p>Самые активные рефералы</p>}
-            </div>
+            <TabsComponent tabs={tabReferralsData} />
           </div>
         );
       case "documentation":
-        return <p>Здесь отображается документация.</p>;
+        return <FAQComponent faqData={faqData} />;
       default:
         return null;
     }

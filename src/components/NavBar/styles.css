@@ -20,6 +20,10 @@
     height: 100%;
   }
 
+  .navbar-right li {
+    min-width: 105px;
+  }
+
   .navbar-right nav a {
     display: flex;
     flex-direction: column;

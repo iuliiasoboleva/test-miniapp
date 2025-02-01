@@ -26,6 +26,7 @@
   margin: 15px 5px;
   text-align: center;
   flex: 1;
+  min-width: 110px;
 }
 
 .partner-top-nav a {
@@ -67,6 +68,12 @@
   justify-content: space-between;
   width: 100%;
   gap: 10px;
+  color: #fff;
+}
+
+.stat-item p {
+  display: flex;
+  align-items: center;
 }
 
 .stat-icon {
@@ -105,6 +112,9 @@
   text-align: left;
   margin: 20px 0;
   color: white;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
 }
 
 .partner-copy-link i {
@@ -119,35 +129,4 @@
 
 .link-text:hover {
   color: #0056b3;
-}
-
-.sub-tabs {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-
-.sub-tab {
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #f1f1f1;
-  width: 100%;
-}
-
-.sub-tab button {
-  width: 100%;
-}
-
-.sub-tab.active {
-  background-color: #000080;
-  color: white;
-}
-
-.sub-tab-content {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
-  color: black;
 }
