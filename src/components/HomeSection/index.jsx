@@ -20,7 +20,7 @@ const HomeSection = () => {
             <div className="rightSide">
                 <div className="titleButton">
                     Присоединяйтесь
-                    <button className="arrowButton"></button>
+                    <div className="arrowButton"></div>
                 </div>
                 <div className="buttonSection">
                     <div className="button">

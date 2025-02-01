@@ -65,14 +65,18 @@
   height: auto;
 }
 
-#settings{
-  border-radius: 12px 12px 0 0;
+#settings,
+#funds {
   flex-direction: row;
   gap: 8px;
+  justify-content: flex-start;
+}
+
+
+#settings{
+  border-radius: 12px 12px 0 0; 
 }
 
 #funds{
   border-radius: 0 0 12px 12px;
-  flex-direction: row;
-  gap: 8px;
 }
