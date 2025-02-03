@@ -1,0 +1,91 @@
+.settings-tab {
+  padding: 15px;
+}
+
+.notification {
+  background-color: var(--tg-theme-secondary-bg-color, #393939);
+  color: var(--tg-theme-text-color, #ccc);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.notification i {
+  margin-right: 10px;
+  color: var(--tg-theme-link-color, #2678b6);
+}
+
+.settings-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.switch-label {
+  font-size: 14px;
+  color: var(--tg-theme-text-color, #ccc);
+}
+
+/* Новый стиль переключателя */
+.toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle-button {
+  width: 50px;
+  height: 30px;
+  border: none;
+  border-radius: 15px;
+  background-color: #ddd;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-button.active {
+  background-color: #a855f7;
+}
+
+.toggle-button.inactive {
+  background-color: #ddd;
+  color: #000;
+}
+
+.toggle-button:hover {
+  opacity: 0.8;
+}
+
+.settings-textarea {
+  position: relative;
+}
+
+.settings-textarea textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background: var(--tg-theme-secondary-bg-color, #393939);
+  color: var(--tg-theme-text-color, #ccc);
+  resize: vertical;
+}
+
+.char-counter {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-size: 12px;
+  color: gray;
+}
+
+.gpt-settings-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

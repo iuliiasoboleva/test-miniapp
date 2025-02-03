@@ -7,8 +7,9 @@ import SettingsSection from "../../components/SettingsSection";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import TabsComponent from "../../components/TabsComponent";
-import './styles.css'
 import FAQComponent from "../../components/FAQComponent";
+import { faqData } from "../../data/faqData";
+import './styles.css'
 
 const MainProfile = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -26,19 +27,6 @@ const MainProfile = () => {
     "История платежей": 'Транзакции отсутствуют.',
     "История токенов": 'Движение токенов не зафиксировано.'
   };
-
-  const faqData = [
-    {
-      icon: "bi bi-lightbulb-fill ok",
-      question: "Рекомендуем посмотреть ознакомительное видео",
-      answer: "Ссылка на видео: https://youtu.be/BW9f0nUdpAo"
-    },
-    {
-      icon: "bi bi-question-square-fill red",
-      question: "Как работает партнерская программа?",
-      answer: "Партнер приглашает пользователей по уникальной ссылке и получает вознаграждение."
-    }
-  ];
 
   return (
     <div>

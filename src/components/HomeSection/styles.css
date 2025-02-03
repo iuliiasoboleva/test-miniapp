@@ -5,14 +5,15 @@
   padding: 8px;
   gap: 8px;
   height: 100%;
+  width: 100%;
 }
 
 /* Левая часть с изображением */
 .leftSide {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 40%;
 }
 
 .home-image {
@@ -23,9 +24,9 @@
 
 /* Правая часть с текстом */
 .rightSide {
-  flex: 1;
   display: flex;
   flex-direction: column;
+  width: 60%;
 }
 
 .titleButton {

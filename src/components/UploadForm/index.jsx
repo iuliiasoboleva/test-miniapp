@@ -9,8 +9,8 @@ const UploadForm = ({ onImagesUpload }) => {
         const files = Array.from(event.target.files);
         const allowedTypes = ["image/png", "image/jpeg", "image/webp"];
 
-        if (files.length > 5) {
-            setError("Можно загрузить не более 5 изображений.");
+        if (files.length > 50) {
+            setError("Можно загрузить не более 50 изображений.");
             return;
         }
 
@@ -59,7 +59,7 @@ const UploadForm = ({ onImagesUpload }) => {
                 <i className="bi bi-image"></i> Выберите файлы
             </button>
 
-            <p className="upload-info">* PNG, JPG, WEBP • Max 5MB каждый • До 5 изображений</p>
+            <p className="upload-info">* PNG, JPG, WEBP • Max 5MB каждый • До 50 изображений</p>
 
             {error && <p className="error-message">{error}</p>}
         </div>

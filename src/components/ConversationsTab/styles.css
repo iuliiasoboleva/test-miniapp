@@ -1,0 +1,106 @@
+.conversations-container {
+    padding: 15px;
+  }
+  
+  .conversations-search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--tg-theme-secondary-bg-color, #393939);
+    padding: 8px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .conversations-search-bar i {
+    margin-right: 10px;
+  }
+  
+  .conversations-search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--tg-theme-text-color, #ccc);
+  }
+
+  .conversation-header {
+    display: flex;
+  }
+  
+  .conversation-card {
+    background-color: var(--tg-theme-secondary-bg-color, #393939);
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  
+  .conversation-status {
+    margin-right: 10px;
+  }
+  
+  .conversation-content {
+    flex-grow: 1;
+  }
+  
+  .conversation-title {
+    display: flex;
+    align-items: center;
+  }
+  
+  .conversation-title-text {
+    font-weight: bold;
+  }
+  
+  .conversation-title-edit {
+    width: 70%;
+  }
+  
+  .conversation-edit-icon,
+  .conversation-save-icon,
+  .conversation-cancel-icon {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .conversation-buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .conversation-buttons button {
+    margin-left: 8px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .conversation-buttons i {
+    margin-top: 2px;
+  }
+
+  .conversation-buttons a {
+   color: var(--tg-theme-link-color, #2678b6);
+  }
+  
+  .conversation-activate-btn {
+    background-color: transparent;
+    color: white;
+  }
+  
+  .conversation-delete-btn {
+    background-color: transparent;
+    vertical-align: middle;
+    color: white;
+  }
+  
+  .conversations-no-results {
+    text-align: center;
+    padding: 20px;
+    color: var(--tg-theme-text-color, #ccc);
+  }
+  

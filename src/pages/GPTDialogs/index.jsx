@@ -1,17 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo.svg";
+import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
+import logo from "../../assets/images/logo.svg";
 import mockMessages from "../../data/messages";
 import "./styles.css";
 
 const GPTDialogs = () => {
   const { id } = useParams(); // Получаем id сообщения (если есть)
-  const navigate = useNavigate();
   const [messages, setMessages] = useState([]);
   const [copiedMessageId, setCopiedMessageId] = useState(null);
   const [copiedCodeId, setCopiedCodeId] = useState(null);

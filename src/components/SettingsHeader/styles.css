@@ -1,0 +1,49 @@
+.flux-train-container {
+  margin: 0 15px 15px;
+  flex: 1;
+  height: auto;
+}
+
+.flux-train-top-nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Два столбца */
+  gap: 10px;
+  height: 100%;
+}
+
+.flux-train-top-nav li,
+.flux-train-top-nav nav {
+  height: 100%;
+}
+
+.flux-train-top-nav li {
+  min-width: 105px;
+}
+
+.flux-train-top-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  height: 100%;
+}
+
+.flux-train-top-nav i {
+  font-size: 24px;
+  color: #a855f7;
+}
+
+.flux-train-content {
+  margin-top: 15px;
+}

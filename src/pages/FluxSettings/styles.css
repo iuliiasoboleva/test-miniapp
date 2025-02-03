@@ -79,6 +79,7 @@ input[type="range"]::-webkit-slider-thumb {
     gap: 8px;
     margin-left: 15px;
     margin-right: 15px;
+    flex-direction: column;
 }
 
 .settings-buttons button {

@@ -32,6 +32,17 @@ const plans = [
       },
       discount: "20% off for annual billing",
     },
+    {
+      name: "Premium",
+      tokens: [0, 800],
+      description: ["Feature X", "Feature Y", "Feature Z"],
+      price: { rub: 3000, eur: 30, usd: 36 },
+      dynamicPrices: {
+        0: { rub: 3000, eur: 30, usd: 36 },
+        800: { rub: 4000, eur: 40, usd: 48 },
+      },
+      discount: "20% off for annual billing",
+    },
   ];
   
   export default plans;

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Notice from '../Notice';
 import TabsComponent from "../TabsComponent";
-import "./styles.css";
 import FAQComponent from "../FAQComponent";
+import { faqData } from "../../data/faqData";
+import "./styles.css";
 
 const PartnerSection = () => {
   const [activeTab, setActiveTab] = useState("balance");
@@ -20,19 +21,6 @@ const PartnerSection = () => {
     "Полный список": 'Полный список рефералов',
     "Самые активные": 'Самые активные рефералы'
   };
-
-  const faqData = [
-    {
-      icon: "bi bi-lightbulb-fill ok",
-      question: "Рекомендуем посмотреть ознакомительное видео",
-      answer: "Ссылка на видео: https://youtu.be/BW9f0nUdpAo"
-    },
-    {
-      icon: "bi bi-question-square-fill red",
-      question: "Как работает партнерская программа?",
-      answer: "Партнер приглашает пользователей по уникальной ссылке и получает вознаграждение."
-    }
-  ];
 
   const renderContent = () => {
     switch (activeTab) {
@@ -126,7 +114,7 @@ const PartnerSection = () => {
           </li>
         </ul>
       </nav>
-      <div className="tab-content">{renderContent()}</div>
+      {renderContent()}
     </section>
   );
 };

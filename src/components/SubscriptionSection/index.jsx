@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { ReactComponent as InfoIcon } from "../../assets/images/exclamation.svg";
 import plans from "../../data/plans";
-import "./styles.css";
 import PlanDetailsPopup from "../PlanDetailsPopup";
 import PaymentPopup from "../PaymentPopup";
+import "./styles.css";
 
 const SubscriptionSection = () => {
   const [selectedPlan, setSelectedPlan] = useState(null);

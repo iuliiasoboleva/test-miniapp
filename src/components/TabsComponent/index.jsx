@@ -20,7 +20,7 @@ const TabsComponent = ({ tabs }) => {
             <div className="statistics">
                 <div className="content-block">
                         <div>
-                            <div className="tab-content">{tabs[activeTab]}</div>
+                            {tabs[activeTab]}
                         </div>
                 </div>
             </div>

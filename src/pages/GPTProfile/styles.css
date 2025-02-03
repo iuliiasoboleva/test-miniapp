@@ -1,89 +1,11 @@
-.gpt-profile {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
-  .info-block {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #f1f1f1;
+.info-block-dialogs {
+    background: var(--tg-theme-secondary-bg-color, #393939);
+    border-radius: 10px;
+    margin: 15px;
     padding: 10px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .info-icon {
-    width: 20px;
-    height: 20px;
-    color: #007bff;
-  }
-  
-  .tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
-  }
-  
-  .tab {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    transition: background-color 0.3s;
-    color: black;
-  }
-  
-  .tab.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .tab-icon {
-    width: 30px;
-    height: 30px;
-    margin-bottom: 5px;
-  }
-  
-  .tab-content {
-    padding: 10px;
-    border-radius: 8px;
-  }
-  
-  .plan {
-    margin-bottom: 20px;
-  }
-  
-  .plan-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .plan-text {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
+}
 
-  .plan-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .plan-info {
-    font-weight: bold;
-  }
-  
-  .model-select {
-    margin-top: 20px;
-  }
-
-  .model-select label {
-    margin-right: 8px;
-  }
-  
+.info-block-dialogs i {
+    color: var(--tg-theme-link-color, #2678b6);
+    margin-right: 5px;
+}
