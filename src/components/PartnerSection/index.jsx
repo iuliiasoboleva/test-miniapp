@@ -19,7 +19,7 @@ const PartnerSection = () => {
 
   const tabReferralsData = {
     "Полный список": 'Полный список рефералов',
-    "Самые активные": 'Самые активные рефералы'
+    "Активные": 'Самые активные рефералы'
   };
 
   const renderContent = () => {
@@ -31,25 +31,29 @@ const PartnerSection = () => {
               <div className="stat-item">
                 <div>
                   <p>
-                    <span className="stat-icon"><i class="bi bi-piggy-bank-fill"></i></span>
+                    <span className="stat-icon"><i className="bi bi-cpu-fill"></i></span>
                     <span className="stat-text">Баланс партнера</span>
                   </p>
-                  <span className="stat-number">0.000 ⚡</span>
+                  <span className="stat-number">
+                    0.000
+                  </span>
                 </div>
               </div>
               <div className="stat-item">
                 <div>
                   <p>
-                    <span className="stat-icon"><i class="bi bi-graph-up-arrow"></i></span>
+                    <span className="stat-icon"><i className="bi bi-bar-chart-fill"></i></span>
                     <span className="stat-text">Всего продаж</span>
                   </p>
-                  <span className="stat-number">0 🛒</span>
+                  <span className="stat-number">
+                    0
+                  </span>
                 </div>
               </div>
               <div className="stat-item">
                 <div>
                   <p>
-                    <span className="stat-icon"><i class="bi bi-currency-exchange"></i></span>
+                    <span className="stat-icon"><i className="bi bi-wallet-fill"></i></span>
                     <span className="stat-text">Сумма продаж</span>
                   </p>
                   <span className="stat-number">0.00 ₽ / 0.00 €</span>
@@ -57,7 +61,7 @@ const PartnerSection = () => {
               </div>
               <button href="#" className="cardButton">Вывести в <span>₽ € $</span></button>
             </div>
-            <Notice text={' Отправляйте друзьям/коллегам свою уникальную ссылку, чтобы зарабатывать вместе с SYNTX 👇'} />
+            <Notice text={' Отправляйте друзьям/коллегам свою уникальную ссылку, чтобы зарабатывать вместе'} />
             <div className="partner-copy-link">
               <p
                 className="link-text"
@@ -93,7 +97,7 @@ const PartnerSection = () => {
               className={activeTab === "balance" ? "active" : ""}
               onClick={() => handleTabClick("balance")}
             >
-              <i className="bi bi-piggy-bank-fill"></i> Баланс
+              <i className="bi bi-cpu-fill"></i> Баланс
             </a>
           </li>
           <li>
@@ -101,7 +105,7 @@ const PartnerSection = () => {
               className={activeTab === "referrals" ? "active" : ""}
               onClick={() => handleTabClick("referrals")}
             >
-              <i className="bi bi-people-fill"></i> Мои рефералы
+              <i className="bi bi-person-lines-fill"></i> Мои рефералы
             </a>
           </li>
           <li>
@@ -109,7 +113,7 @@ const PartnerSection = () => {
               className={activeTab === "documentation" ? "active" : ""}
               onClick={() => handleTabClick("documentation")}
             >
-              <i className="bi bi-file-earmark-text-fill"></i> Документация
+              <i className="bi bi-file-code-fill"></i> Документация
             </a>
           </li>
         </ul>

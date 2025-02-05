@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import photoImage from "../../assets/images/ai.jpg";
+import photoImage from "../../assets/images/robot.png";
 import "./styles.css";
 
 const HomeSection = () => {
@@ -20,7 +20,7 @@ const HomeSection = () => {
             <div className="rightSide">
                 <div className="titleButton">
                     Присоединяйтесь
-                    <div className="arrowButton"></div>
+                    <i className="fas fa-arrow-down"></i>
                 </div>
                 <div className="buttonSection">
                     <div className="button">
@@ -28,7 +28,7 @@ const HomeSection = () => {
                             TG комьюнити
                             <div className="button-icon">
                                 <span className="telegram-icon">
-                                    <i className="bi bi-telegram"></i>
+                                    <i className="fab fa-telegram-plane"></i>
                                 </span>
                             </div>
                         </a>
@@ -37,7 +37,7 @@ const HomeSection = () => {
                         <a href="#">
                             TG канал
                             <div className="button-icon">
-                                <i className="bi bi-substack"></i>
+                                <i className="fas fa-rss"></i>
                             </div>
                         </a>
                     </div>
@@ -45,7 +45,7 @@ const HomeSection = () => {
                         <a href="#">
                             Instagram
                             <div className="button-icon">
-                                <i className="bi bi-instagram"></i>
+                                <i className="fab fa-instagram"></i>
                             </div>
                         </a>
                     </div>
@@ -56,7 +56,7 @@ const HomeSection = () => {
                             <a href="#">
                                 <p>МЫ В YOUTUBE</p>
                                 <div className="button-icon">
-                                    <i className="bi bi-youtube"></i>
+                                    <i className="fab fa-youtube"></i>
                                 </div>
                             </a>
                         </div>

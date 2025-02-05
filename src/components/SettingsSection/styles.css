@@ -13,11 +13,10 @@
     align-items: center;
     margin-bottom: 15px;
     padding: 10px;
-    border: 1px solid #ddd;
     border-radius: 10px;
-    background-color: #fff;
-    color: black;
     gap: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
   }
   
   .notification-row span {
@@ -42,9 +41,9 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .toggle-button.active {
-    background-color: #a855f7;
+    background-color: #0170c9;
   }
   
   .toggle-button.inactive {

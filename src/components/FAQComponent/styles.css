@@ -5,8 +5,8 @@
 }
 
 .faq-item {
-    background: #fff;
-    color: #201F22;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
     border-radius: 20px;
     padding: 20px;
 }
@@ -14,14 +14,14 @@
 .question {
     margin-bottom: 5px;
     font-weight: 400;
-    color: #C345FF;
+    color: #0170c9;
 }
 
 .question i {
-    color: #66EBE3;
+    color: #0170c9;
 }
 
 .answer {
     font-size: 14px;
-    color: #201F22;
+    color: white;
 }

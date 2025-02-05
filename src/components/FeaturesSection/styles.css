@@ -19,8 +19,13 @@
   font-size: 1.5rem;
 }
 
+.token-display i {
+  font-size: 24px;
+  color: #0170c9;
+}
+
 .selected-tokens {
-  color: #C345FF;
+  color: white;
 }
 
 .info-icon {
@@ -39,8 +44,8 @@
 
 .subscribe-button {
   border: 0;
-  color: #1c1c1c;
-  background: #66EBE3;
+  color: white;
+  background: #0170c9;
   text-align: center;
   border-radius: 20px;
   padding: 15px 0;
@@ -62,14 +67,14 @@ input[type="range"] {
 }
 
 input.token-range[type="range"]::-webkit-slider-runnable-track {
-  background: #D57CFF;
+  background: #0170c9;
   border-radius: 4px;
   color: rgb(157, 150, 142);
 }
 
 input.token-range[type="range"]::-webkit-slider-thumb {
   background: #ffffff;
-  border: 2px solid #D57CFF;
+  border: 2px solid #0170c9;
   border-radius: 50%;
   cursor: pointer;
   width: 24px;

@@ -8,20 +8,24 @@ const Footer = ({ onNavClick }) => {
         <ul>
           <li onClick={() => onNavClick("home")}>
             <a href="#">
-              <i className="fas fa-user"></i>
-              Аккаунт
+              <i className="fas fa-microchip"></i>  {/* Аккаунт */}
+              {/* Аккаунт */}
             </a>
           </li>
           <li onClick={() => onNavClick("partner")}>
             <a href="#">
-              <i className="fas fa-handshake"></i>
-              <span className="footer-menu-text">Партнерство</span>
+            <i className="fas fa-laptop-code"></i>  {/* Партнерство */}
+            <span className="footer-menu-text">
+                {/* Партнерство */}
+                </span>
             </a>
           </li>
           <li onClick={() => onNavClick("features")}>
             <a href="#">
-              <i className="fas fa-users"></i>
-              <span className="footer-menu-text">Сообщество</span>
+            <i className="fas fa-server"></i>  {/* Сообщество */}
+            <span className="footer-menu-text">
+                {/* Сообщество */}
+                </span>
             </a>
           </li>
         </ul>

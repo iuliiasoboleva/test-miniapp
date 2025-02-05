@@ -37,45 +37,50 @@ const NavBar = ({ onNavClick }) => {
         <ul>
           <li onClick={() => handleNavClick("subscription")}>
             <a href="#">
-              <i className="bi bi-person-fill-check"></i>
+              <i className="fas fa-user-check"></i>
               {t("navbar.subscription")}
             </a>
           </li>
           <li onClick={() => handleNavClick("features")}>
             <a href="#">
-              <i className="bi bi-lightning-charge-fill"></i>
+              <i className="fas fa-bolt"></i>
               {t("navbar.tokens")}
             </a>
           </li>
           <li onClick={() => handleNavClick("faq")}>
             <a href="#">
-              <i className="bi bi-question"></i>
+              <i className="fas fa-question-circle"></i>
               FAQ
             </a>
           </li>
           <li>
             <a id="more-menu" onClick={handleContactClick}>
-              <i className="bi bi-chevron-double-down"></i>
+              <i className="fas fa-chevron-down"></i>
               {t("navbar.more")}
             </a>
             {showSubMenu && (
               <ul id="dropdown-menu">
-                <li id="dropdown-menu-item" onClick={() => {
-                  handleNavClick("settings");
-                  setShowSubMenu(false);
-                }}
+                <li
+                  id="dropdown-menu-item"
+                  onClick={() => {
+                    handleNavClick("settings");
+                    setShowSubMenu(false);
+                  }}
                 >
                   <a href="#" id="settings">
-                    <i className="bi bi-gear-fill"></i>
+                    <i className="fas fa-cog"></i>
                     <span>{t("navbar.settings")}</span>
                   </a>
                 </li>
-                <li id="dropdown-menu-item" onClick={() => {
-                  handleNavClick("funds");
-                  setShowSubMenu(false);
-                }}    >
+                <li
+                  id="dropdown-menu-item"
+                  onClick={() => {
+                    handleNavClick("funds");
+                    setShowSubMenu(false);
+                  }}
+                >
                   <a href="#" id="funds">
-                    <i className="bi bi-calculator-fill"></i>
+                    <i className="fas fa-calculator"></i>
                     <span>{t("navbar.funds")}</span>
                   </a>
                 </li>

@@ -18,7 +18,7 @@ const FeaturesSection = ({ onNavigate }) => {
     <section id="features" className="features-section">
       <h2 className="features-section-title">Выберите количество</h2>
       <div className="token-display">
-        <span className="selected-tokens">{tokens}  ⚡</span>
+        <span className="selected-tokens">{tokens}</span><i className="fas fa-bolt"></i>
       </div>
       <input
         type="range"

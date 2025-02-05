@@ -7,7 +7,7 @@
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-    color: #171319
+    color: #171319;
   }
   
   .payment-popup-content {
@@ -31,7 +31,7 @@
   }
 
   .close-button {
-    color: #C345FF;
+    color: #0170c9;
     text-align: right;
     font-size: 28px;
     font-weight: bold;
@@ -41,7 +41,6 @@
   .select-wrapper {
     align-items: center;
     gap: 10px;
-    justify-content: space-between;
     display: flex;
     position: relative;
   }
@@ -52,18 +51,13 @@
     flex-basis: 40%;
   }
 
-  .select-input {
-    flex-basis: 55%;
-    flex-grow: 1;
-  }
-
 .select-wrapper i {
   position: absolute;
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
   pointer-events: none;
-  color: #727272;
+  color: white;
   font-size: 16px;
   stroke-width: 2px;
 }
@@ -86,7 +80,7 @@
 
 .payment-button {
   border: 0;
-  background: #66EBE3;
+  background: #0170c9;
   text-align: center;
   border-radius: 20px;
   padding: 15px 0;
@@ -95,5 +89,5 @@
   font-family: "Unbounded", sans-serif;
   letter-spacing: 0.5px;
   width: 100%;
-  color: #1c1c1c;
+  color: white;
 }

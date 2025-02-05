@@ -1,64 +1,58 @@
-/* Общий контейнер */
 .mainBlock {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
-  gap: 8px;
-  height: 100%;
-  width: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: start;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
-/* Левая часть с изображением */
 .leftSide {
+  z-index: 2;
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 40%;
+}
+
+.rightSide {
+  margin-top: -45px; /* Часть правого блока зайдет под левый */
+  z-index: 1;
+}
+
+.mainBlock i {
+  color: #0170c9;
 }
 
 .home-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Правая часть с текстом */
-.rightSide {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
+  max-width: 120px;
+  transform: rotate(90deg);
+  z-index: 2;
+  width: 40%;
 }
 
 .titleButton {
-  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  height: 75px;
   border-radius: 20px;
-  padding: 13px;
-  font-size: 9px;
-  color: #000;
-  font-weight: 300;
+  background: #0170c9;
+  color: #fff;
+  padding: 15px;
   position: relative;
+  overflow: hidden;
+  box-shadow: 0px -13px 20px -5px rgba(0, 0, 0, 0.4);
   text-align: left;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.arrowButton {
-  position: absolute;
-  right: 15px;
-  top: 20px;
-  transform: translateY(-50%);
-  background-image: url(../../assets/images/arrow_down.png);
-  width: 35px;
-  height: 15px;
-  background-size: 50% 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: none;
-  background-color: unset;
+.titleButton i {
+  color: white;
 }
 
 /* Секция кнопок */
 .buttonSection {
-  background: #1c1c1c;
+  background: rgba(0, 0, 0, 0.8);
   margin-top: -25px;
   padding-top: 40px;
   padding-bottom: 35px;
@@ -174,7 +168,7 @@
 }
 
 .back {
-  background: #1c1c1c;
+  background: #0b0b0e;
   opacity: 0;
   transform: translateY(10px);
 }

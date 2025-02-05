@@ -1,16 +1,20 @@
 .navbar {
     display: flex;
-    width: 100%;
     flex-direction: column;
 }
   
 .navbar-left {
     margin: 15px;
-    flex: 1;
     text-align: center;
     gap: 8px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-info {
+    width: 50%;
 }
   
 .tokens-info {
@@ -20,49 +24,9 @@
 
 .lightning {
     font-size: 15px;
-    color: #C345FF;
+    color: #0170c9;
 }
 
 .bi-lightning-charge-fill::before {
     content: "\f46c";
-}
-  
-.language-switcher {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-  
-.language-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    background-color: #1c1c1c;
-    border-radius: 12px;
-    width: 100%;
-    padding: 10px 20px;
-    box-sizing: border-box;
-    text-align: center;
-    cursor: pointer;
-    height: 100%;
-    border: none;
-    gap: 8px;
-}
-  
-.language-button:hover {
-    background-color: #e0e0e0;
-}
-  
-.flag-icon {
-    width: 20px;
-    height: auto;
-    border-radius: 2px;
-}
-
-@media (max-width: 768px) {
-    .language-switcher {
-        flex-direction: column;
-    }
 }
