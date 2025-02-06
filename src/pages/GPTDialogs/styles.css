@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  color: #ffffff;
 }
 
 .chat-header {
@@ -12,14 +13,14 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  background-color: #272822;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .chat-header a {
   text-decoration: none;
-  color: #ccc;
+  color: #ffffff;
   margin: 0 5px;
-  opacity: 0.6;
+  opacity: 0.8;
   font-size: 12px;
 }
 
@@ -40,6 +41,10 @@
   justify-content: flex-end;
 }
 
+.message.user .message-content {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
 .message.bot {
   justify-content: flex-start;
 }
@@ -47,7 +52,10 @@
 .message-content {
   max-width: 75%;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #0170c9;
+  color: #ffffff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .bot-icon {
@@ -66,36 +74,24 @@
 .message-data {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-
-.bot .message-data {
-  align-items: flex-start;
-}
-
-.user .message-data {
-  align-items: flex-end;
-}
-
-.user .message-meta {
-  justify-content: flex-end;
-}
-
-.bot .message-meta {
-  justify-content: space-between;
+  gap: 12px;
 }
 
 .timestamp, .model {
-  color: #666;
-  font-size: 12px;
+  color: #ffffff;
+  font-size: 9px;
   margin-right: 8px;
   white-space: nowrap;
 }
 
+.timestamp i, .model i, .copy-message-btn i {
+  margin-right: 4px;
+}
+
 .copy-message-btn {
   padding: 5px 10px;
-  background-color: var(--tg-theme-secondary-bg-color, #393939);
-  color: var(--tg-theme-text-color, #ffffff);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -107,15 +103,13 @@
   width: 150px;
 }
 
-.copy-message-btn i,
-.message-data i {
-  margin-right: 3px;
+.copy-message-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .gpt-dialogs-container pre {
-  background: #272822;
-  color: #fff;
-  padding: 10px;
+  background: #0170c9;
+  color: #ffffff;
   border-radius: 5px;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -127,6 +121,8 @@
   border-collapse: collapse;
   border-radius: 5px;
   overflow: hidden;
+  background: #0170c9;
+  color: #ffffff;
 }
 
 .gpt-dialogs-container th, 
@@ -134,11 +130,7 @@
   padding: 8px;
   text-align: left;
   font-size: 12px;
-}
-
-.gpt-dialogs-container th {
-  background: #272822;
-  font-weight: bold;
+  border: 1px solid #ffffff;
 }
 
 .gpt-dialogs-container ul, 
@@ -152,8 +144,7 @@
 
 .code-block {
   position: relative;
-  background: #272822;
-  padding: 10px;
+  background: #0170c9;
   border-radius: 5px;
   margin-top: 5px;
   overflow: auto;
@@ -163,8 +154,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1e1e1e;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
   font-size: 14px;
   padding: 5px 10px;
   border-top-left-radius: 5px;

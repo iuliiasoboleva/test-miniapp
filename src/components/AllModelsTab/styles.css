@@ -8,7 +8,7 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
 }
 
 .all-models-statistics-select {
@@ -17,24 +17,25 @@
     align-items: center;
 }
 
-.ok i {
+.ok i, .all-models-stat-item i {
     margin-right: 5px;
-    color: green;
+    color: #0170c9;
+    margin-bottom: 2px;
 }
 
 .err i {
     margin-right: 5px;
-    color: red;
+    color: white;
 }
 
 .all-models-statistics {
     border-radius: 10px;
-    color: var(--tg-theme-text-color, #ccc);
+    color: white;
     padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    background-color: var(--tg-theme-secondary-bg-color, #393939);
+    gap: 12px;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .all-models-stat-item {

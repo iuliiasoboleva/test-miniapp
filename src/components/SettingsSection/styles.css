@@ -42,10 +42,6 @@
     justify-content: center;
   }
 
-  .toggle-button.active {
-    background-color: #0170c9;
-  }
-  
   .toggle-button.inactive {
     background-color: #ddd;
     color: #000;

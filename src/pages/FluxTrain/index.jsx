@@ -34,7 +34,7 @@ const FluxTrain = () => {
   ];
 
   return (
-    <div>
+    <div className="train-main">
       <SettingsHeader tabs={tabs} />
     </div>
   );

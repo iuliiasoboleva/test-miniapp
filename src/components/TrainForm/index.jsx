@@ -24,7 +24,7 @@ const FluxForm = () => {
     };
 
     return (
-        <div className="flux-train-container">
+        <div className="train-main-container">
             <h2>Создать <span>Lora @ Flux</span></h2>
             <Notice text={'Загружайте до 50 изображений и создавайте свои собственные лоры. Подходит для создания собственной нейрофотосессии или уникальных стилей.'} />
 

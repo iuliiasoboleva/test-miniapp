@@ -11,32 +11,33 @@ const GPTProfile = () => {
     {
       key: "all_models",
       label: "Все модели",
-      icon: "bi bi-robot",
+      icon: "bi bi-cpu-fill",
       content: <AllModelsTab />,
     },
     {
       key: "gpts",
       label: "GPTs",
-      icon: "bi bi-grid-fill",
+      icon: "bi bi-app-indicator",
       content: <GPTsTab />,
     },
     {
       key: "settings",
       label: "Настройки",
-      icon: "bi bi-gear-fill",
+      icon: "bi bi-tools",
       content: <SettingsTab/>,
     },
     {
       key: "dialogs",
       label: "Диалоги",
-      icon: "bi bi-chat-right-text-fill",
+      icon: "bi bi-terminal-fill",
       content: <ConversationsTab/>,
     },
   ];
 
   return (
     <div>
-      <div className="info-block-dialogs"><i className="bi bi-info-square-fill"></i>
+      <div className="info-block-dialogs">
+        <i className="bi bi-info-circle-fill"></i>
         Устанавливайте различные модели, используйте GPTs, сохраняйте свои индивидуальные настройки и контролируйте запросы в этом меню.
       </div>
       <SettingsHeader tabs={tabs} />

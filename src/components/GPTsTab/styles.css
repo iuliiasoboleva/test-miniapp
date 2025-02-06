@@ -19,11 +19,11 @@
 .gpts-tab .gpts-form-group, 
 .gpts-tab .gpt-item {
     border-radius: 10px;
-    color: var(--tg-theme-text-color, #ccc);
+    color: white;
     padding: 12px;
     display: flex;
     gap: 8px;
-    background-color: var(--tg-theme-secondary-bg-color, #393939);
+    background-color: rgba(0, 0, 0, 0.8);
     align-items: center;
 }
 
@@ -34,6 +34,10 @@
 .gpts-tab .gpts-form-group .styled-input {
     width: 100%;
     max-width: 100%;
+}
+
+input::-webkit-input-placeholder {
+    color: white;
 }
 
 .gpts-tab .gpt-item .content {

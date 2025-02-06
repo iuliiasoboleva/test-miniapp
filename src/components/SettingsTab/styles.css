@@ -1,20 +1,15 @@
-.settings-tab {
-  padding: 15px;
-}
-
 .notification {
-  background-color: var(--tg-theme-secondary-bg-color, #393939);
-  color: var(--tg-theme-text-color, #ccc);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
   display: flex;
-  align-items: center;
 }
 
 .notification i {
   margin-right: 10px;
-  color: var(--tg-theme-link-color, #2678b6);
+  color: var(--tg-theme-link-color, #0170c9);
 }
 
 .settings-toggle {
@@ -26,7 +21,7 @@
 
 .switch-label {
   font-size: 14px;
-  color: var(--tg-theme-text-color, #ccc);
+  color: white;
 }
 
 /* Новый стиль переключателя */
@@ -71,8 +66,8 @@
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background: var(--tg-theme-secondary-bg-color, #393939);
-  color: var(--tg-theme-text-color, #ccc);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   resize: vertical;
 }
 

@@ -18,13 +18,13 @@
 
 .model-title,
 .settings-form {
-    background: #1c1c1c;
-    color: #E2E2E2;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
     border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 /* Чекбокс "Случайный Seed" */
 .checkbox-label {
@@ -138,7 +138,7 @@ button:hover {
 
 /* Серый пунктирный прямоугольник (вертикальный) */
 .preview-frame-inverse {
-    border: 2px dashed #6b7280;
+    border: 2px dashed #0170c9;
     border-radius: 10px;
 }
 

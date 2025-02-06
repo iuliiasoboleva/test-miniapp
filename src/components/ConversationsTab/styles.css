@@ -1,11 +1,7 @@
-.conversations-container {
-    padding: 15px;
-  }
-  
-  .conversations-search-bar {
+.conversations-search-bar {
     display: flex;
     align-items: center;
-    background-color: var(--tg-theme-secondary-bg-color, #393939);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 8px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -28,7 +24,7 @@
   }
   
   .conversation-card {
-    background-color: var(--tg-theme-secondary-bg-color, #393939);
+    background-color: rgba(0, 0, 0, 0.8);
     padding: 12px;
     border-radius: 5px;
     margin-bottom: 8px;
@@ -39,6 +35,10 @@
   
   .conversation-status {
     margin-right: 10px;
+  }
+  
+  .conversation-status i {
+    color: #0170c9;
   }
   
   .conversation-content {

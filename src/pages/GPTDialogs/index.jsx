@@ -10,7 +10,7 @@ import mockMessages from "../../data/messages";
 import "./styles.css";
 
 const GPTDialogs = () => {
-  const { id } = useParams(); // Получаем id сообщения (если есть)
+  const { id } = useParams();
   const [messages, setMessages] = useState([]);
   const [copiedMessageId, setCopiedMessageId] = useState(null);
   const [copiedCodeId, setCopiedCodeId] = useState(null);
@@ -46,63 +46,51 @@ const GPTDialogs = () => {
     navigator.clipboard.writeText(pageUrl);
   };
 
-  const renderMessageContent = (message) => {
-    return (
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
-        components={{
-          code({ inline, className, children }) {
-            const match = /language-(\w+)/.exec(className || "");
-            const language = match ? match[1] : "text";
-            const codeString = String(children).replace(/\n$/, "");
+  const renderMessageContent = (message) => (
+    <ReactMarkdown
+      remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeRaw]}
+      components={{
+        code({ inline, className, children }) {
+          const match = /language-(\w+)/.exec(className || "");
+          const language = match ? match[1] : "text";
+          const codeString = String(children).replace(/\n$/, "");
 
-            return !inline ? (
-              <div className="code-block">
-                <div className="code-header">
-                  <span className="code-language">{language.toUpperCase()}</span>
-                  <button
-                    className="copy-btn"
-                    onClick={() => copyCodeToClipboard(message.id, codeString)}
-                  >
-                    {copiedCodeId === message.id ? "✅" : "📋"}
-                  </button>
-                </div>
-                <SyntaxHighlighter style={atomDark} language={language} PreTag="div">
-                  {codeString}
-                </SyntaxHighlighter>
+          return !inline ? (
+            <div className="code-block">
+              <div className="code-header">
+                <span className="code-language">{language.toUpperCase()}</span>
+                <button
+                  className="copy-btn"
+                  onClick={() => copyCodeToClipboard(message.id, codeString)}
+                >
+                  {copiedCodeId === message.id ? "✅" : "📋"}
+                </button>
               </div>
-            ) : (
-              <code className={className}>{children}</code>
-            );
-          },
-          table({ children }) {
-            return <table className="markdown-table">{children}</table>;
-          },
-          th({ children }) {
-            return <th style={{ border: "1px solid rgb(29, 31, 33)", padding: "5px" }}>{children}</th>;
-          },
-          td({ children }) {
-            return <td style={{ border: "1px solid rgb(29, 31, 33)", padding: "5px" }}>{children}</td>;
-          }
-        }}
-      >
-        {message.text}
-      </ReactMarkdown>
-    );
-  };
+              <SyntaxHighlighter style={atomDark} language={language} PreTag="div">
+                {codeString}
+              </SyntaxHighlighter>
+            </div>
+          ) : (
+            <code className={className}>{children}</code>
+          );
+        }
+      }}
+    >
+      {message.text}
+    </ReactMarkdown>
+  );
 
-  // Если есть id в URL, показываем только одно сообщение
-  const selectedMessage = id ? messages.find(msg => msg.id.toString() === id) : null;
+  const selectedMessage = id ? messages.find((msg) => msg.id.toString() === id) : null;
 
   return (
     <div className="gpt-dialogs-container">
       <div className="chat-header">
         <a href={window.location.href} target="_blank" rel="noopener noreferrer">
-          <i className="bi bi-box-arrow-up-right"></i> В браузер
+          <i className="fas fa-external-link-alt"></i> В браузер
         </a>
         <a href="#" onClick={copyLinkToClipboard}>
-          <i className="bi bi-clipboard"></i> Скопировать ссылку
+          <i className="fas fa-link"></i> Скопировать ссылку
         </a>
       </div>
       <div className="chat-messages">
@@ -122,13 +110,13 @@ const GPTDialogs = () => {
                     onClick={() => copyMessageToClipboard(selectedMessage.id, selectedMessage.text)}
                   >
                     {copiedMessageId === selectedMessage.id ? (
-                      <><i className="bi bi-check2"></i> Скопировано!</>
+                      <><i className="fas fa-check"></i> Скопировано!</>
                     ) : (
-                      <><i className="bi bi-copy"></i> Скопировать</>
+                      <><i className="fas fa-copy"></i> Скопировать</>
                     )}
                   </div>
-                  <span className="model"><i className="bi bi-robot"></i>{selectedMessage.model}</span>
-                  <span className="timestamp"><i className="bi bi-clock-history"></i>{selectedMessage.timestamp}</span>
+                  <span className="model"><i className="fas fa-microchip"></i> {selectedMessage.model}</span>
+                  <span className="timestamp"><i className="fas fa-clock"></i> {selectedMessage.timestamp}</span>
                 </div>
               </div>
             </div>
@@ -150,13 +138,13 @@ const GPTDialogs = () => {
                       onClick={() => copyMessageToClipboard(msg.id, msg.text)}
                     >
                       {copiedMessageId === msg.id ? (
-                        <><i className="bi bi-check2"></i> Скопировано!</>
+                        <><i className="fas fa-check"></i> Скопировано!</>
                       ) : (
-                        <><i className="bi bi-copy"></i> Скопировать</>
+                        <><i className="fas fa-copy"></i> Скопировать</>
                       )}
                     </div>
-                    <span className="model"><i className="bi bi-robot"></i>{msg.model}</span>
-                    <span className="timestamp"><i className="bi bi-clock-history"></i>{msg.timestamp}</span>
+                    <span className="model"><i className="fas fa-microchip"></i> {msg.model}</span>
+                    <span className="timestamp"><i className="fas fa-clock"></i> {msg.timestamp}</span>
                   </div>
                 </div>
               </div>
